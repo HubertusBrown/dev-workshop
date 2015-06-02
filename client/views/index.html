@@ -9,14 +9,55 @@
 
 </head>
 
-<body>
-<h3>The Dev</h3>
+<body ng-app="devApp">
+<div class="navbar navbar-default"><a class="navbar-brand" ng-href="/">The Dev</a></div>
 
+<div class="container">
+    <div ng-view=""></div>
+</div>
 
 <script src="bower_components/jquery/dist/jquery.js"></script>
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+
+<script src="app.js"></script>
+<script src="components/project/panels/project-display-directive.js"></script>
+<script src="components/project/projects-directive.js"></script>
+<script src="components/project/projects-service.js"></script>
+<script src="components/project/project.js"></script>
+<script src="components/project/requirements/requirements.js"></script>
+
+<script src="components/scorecard/scorecard.js"></script>
+
+<script src="components/team/team.js"></script>
+<script src="components/team/team-display-directive.js"></script>
+<script src="components/team/team-panel-directive.js"></script>
+<script src="components/team/team-service.js"></script>
+
+<script src="components/utils/project_phases.js"></script>
+<script src="components/utils/developer_roles.js"></script>
+<script src="components/utils/project_contract.js"></script>
+<script src="components/utils/assign-project-button-directive.js"></script>
+
+
+<script src="components/developer/skills/skill.js"></script>
+<script src="components/developer/skills/skill_calculator.js"></script>
+<script src="components/developer/skills/skill_group.js"></script>
+<script src="components/developer/skills/skills.js"></script>
+<script src="components/developer/skills/skill-table-directive.js"></script>
+
+<script src="components/developer/panels/developer-market-directive.js"></script>
+<script src="components/developer/panels/developer-summary-directive.js"></script>
+
+
+<script src="components/developer/developer.js"></script>
+<script src="components/developer/developer-service.js"></script>
+
+<script src="components/testing/tester-helper-service.js"></script>
+
+
+
 
 </body>
 </html>

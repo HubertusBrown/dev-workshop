@@ -1,0 +1,22 @@
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Teams
+  <span style="float:right">
+
+    <button class=" btn btn-danger btn-xs" ng-show="isTesterMode()" ng-click="addSampleTeam()">Add Sample Team</button>
+  </span>
+    </div>
+    <div class="panel-body">
+
+        <div ng-repeat="team in getTeams()">
+            <team-display data-team="team"></team-display>
+        </div>
+
+    </div>
+    <div class="panel-footer">
+        <form ng-submit="createTeam(newTeamName.toUpperCase())">
+            <input ng-model="newTeamName" placeholder="Enter team name" required>
+            <button class="btn btn-sm btn-primary" style="float:right">Create Team</button>
+        </form>
+    </div>
+</div>

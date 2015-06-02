@@ -1,0 +1,13 @@
+<div class="btn-group">
+  <button type="button" class="btn btn-xs  dropdown-toggle"
+          ng-class="{'btn-success': !!getAssignedTeam(), 'btn-warning': !!!getAssignedTeam()}"
+          data-toggle="dropdown" aria-expanded="false">
+    Team: [ {{displayAssignedTeamName()}} ] <span class="caret"></span></button>
+
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#" ng-click="assignToTeam(team)" ng-repeat="team in getTeams()">[ {{team.getTeamName()}} ]</a>
+    </li>
+    <li><a href="#" ng-click="unassign()">[ --none-- ]</a></li>
+  </ul>
+
+</div>

@@ -1,0 +1,18 @@
+<div class="panel panel-primary">
+  <div class="panel-heading"> Projects
+  <span style="float:right">
+    <!--<button class=" btn btn-xs" ng-click="" style="color: black">Find project</button>-->
+    <!--<button class=" btn btn-xs" ng-click="" style="color: black">Create Project</button>-->
+    <button class=" btn btn-danger btn-xs" ng-show="isTesterMode()" ng-click="addSampleProject()">Add Sample Project</button>
+  </span>
+  </div>
+
+
+  <div style="font-size: 12px">
+    <ul ng-repeat="project in getProjects()">
+      <li>
+        <project-display data-project="project"></project-display>
+      </li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<h4>Team: "<b>{{team.getTeamName()}}</b>"<button class="btn btn-xs btn-warning" ng-click="deleteTeam()" style="float:right; margin-right: 20px">Delete</button><br></h4>
+
+Assigned project: [ {{getAssignedProjectName()}} ]<br>
+Members [{{team.getMemberCount()}}]:<br>
+<ul ng-repeat="member in team.getMembers()">
+  <li>
+    {{member.getName()}}
+    <assign-role-button data-member="member" style="margin-left: 30px"></assign-role-button>
+  </li>
+</ul>
+<br>
+<div class="row" style="background-color: #204d74; height: 10px">
+  <div class="col-md-6" style="background-color: #347dbc; height: 10px"></div>
+  <div class="col-md-6" style="background-color: #3b8dd5; height: 10px"></div>
+</div>

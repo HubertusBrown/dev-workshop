@@ -1,0 +1,12 @@
+<h4><span ng-click="show=!show;">{{member.getName()}}</span>
+<span style="float:right;margin-right:30px">
+<assign-developer-button data-member="member"></assign-developer-button>
+<button class=" btn btn-danger btn-xs" ng-click="sackDeveloper(member)" data-member="member">Sack</button>
+</span>
+</h4>
+<br>
+<div ng-show="show">
+  <div ng-repeat="skillGroup in getSkillGroups()">
+    <skill-table data-group="skillGroup" data-member="member"></skill-table>
+  </div>
+</div>

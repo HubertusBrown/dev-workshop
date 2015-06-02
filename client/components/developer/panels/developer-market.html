@@ -1,0 +1,24 @@
+<div style="font-size:11px">
+  <h4>
+    {{member.getName()}}
+    <button style="margin-left: 50px" class="btn btn-xs btn-info" ng-click="toggleHidden()">{{getToggleHiddenButtonText()}}</button>
+
+    <button style="margin-left: 20px" class="btn btn-xs" ng-click="">See CV</button>
+    <button class="btn btn-xs" ng-click="">Information</button>
+    <button class="btn btn-xs btn-danger" ng-click="hireDeveloper(member)">Hire</button>
+  </h4>
+
+  <div ng-hide="isHidden()">
+    sex: {{member.getSex()}}<br>
+    age: {{member.getDateOfBirth()}}<br>
+    nationality: {{member.getNationality()}}<br>
+    Languages spoken: <span ng-repeat="lang in member.getLanguagesSpoken()">{{lang}} </span>
+
+
+    <div ng-repeat="skillGroup in getSkillGroups()">
+      <skill-table data-group="skillGroup" data-member="member"></skill-table>
+    </div>
+  </div>
+</div>
+
+
