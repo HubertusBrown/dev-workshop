@@ -4,7 +4,7 @@ var app = angular.module('devApp');
 
 app.factory('testerHelperService', [function () {
 
-    var testerMode = true;
+    var testerMode = false;
 
     var isTesterMode = function () {
         return testerMode;
