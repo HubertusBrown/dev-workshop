@@ -1,3 +1,3 @@
-#Dev
+#devApp
 
-Can you manage the developer team?
+Basic scaffold for testing workshop.

@@ -6,12 +6,35 @@ module.exports = function (grunt) {
 
 
     grunt.initConfig({
+
+        karma: {
+            dev: {
+                configFile: 'karma.conf.js',
+                browsers: ['Chrome'],
+                autoWatch: true,
+                singleRun: false,
+                logLevel: config.LOG_INFO,
+            },
+            ci: {
+                configFile: 'karma.conf.js',
+                browsers: ['PhantomJS'],
+                reporters: ['progress','html', 'coverage'],
+                autoWatch: false,
+                singleRun: true,
+                logLevel: config.LOG_ERROR,
+            }
+        },
+
         express: {
             dev: {
                 options: {
                     script: 'app.js'
                 }
             }
+        },
+
+        clean: {
+            outputFolder: ['output/coverage','output/']
         },
 
         open: {
@@ -42,8 +65,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-express-server');
     grunt.loadNpmTasks('grunt-open');
     grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-karma');
 
-    grunt.registerTask('start', "Starts server and client", ['express:dev', 'open:dev', 'watch:client']);
+    grunt.registerTask('jenkins', 'Runs tests for CI', ['clean:outputFolder', 'karma:ci']);
+    grunt.registerTask('start', "Starts server and client - for development", ['express:dev', 'open:dev', 'watch:client']);
     grunt.registerTask('server', "Starts server", ['express:dev', 'keepAlive']);
 
 };
