@@ -12,16 +12,14 @@ module.exports = function (grunt) {
                 configFile: 'karma.conf.js',
                 browsers: ['Chrome'],
                 autoWatch: true,
-                singleRun: false,
-                logLevel: config.LOG_INFO,
+                singleRun: false
             },
             ci: {
                 configFile: 'karma.conf.js',
                 browsers: ['PhantomJS'],
                 reporters: ['progress','html', 'coverage'],
                 autoWatch: false,
-                singleRun: true,
-                logLevel: config.LOG_ERROR,
+                singleRun: true
             }
         },
 

@@ -51,6 +51,9 @@ module.exports = function (config) {
         // list of files to exclude
         exclude: [],
 
+        // level of logging
+        // possible values: config.LOG_DISABLE || config.LOG_ERROR || config.LOG_WARN || config.LOG_INFO || config.LOG_DEBUG
+        logLevel: config.LOG_DEBUG,
 
         // test results reporter to use
         // possible values: 'dots', 'progress'
